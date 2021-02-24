@@ -88,14 +88,14 @@ class IkuToken(IconScoreBase, TokenStandard):
         """
         Returns the name of the token.Any name can be given to token
         """
-         return "Pony"
+         return "IkuToken"
 
     @external(readonly=True)
     def symbol(self) -> str:
         """
         Returns the symbol of the token.
         """
-        return "PNY"
+        return "IKU"
 
     @external(readonly=True)
     def balanceOf(self, _owner: Address) -> int:
