@@ -268,17 +268,19 @@ class IkuToken(IconScoreBase, TokenStandard):
 
     @external
     def mint_token(self, _params: str):
-        if self.msg.sender is not _distributor_score:
-            revert("Mint error: Only admin can mint new tokens ")
-        params = json_loads(_params)
+        if self.msg.sender == self.get_distributor_score():
+            params = json_loads(_params)
         params["project_id"] = 1
         params["createDate"] = self.now()
-        tokenId = str(self.current_supply() + 1)
+        tokenId = str(self.current_supply() + 1) 
         self._token_id_list.put(tokenId)
         self._owner_token_count[self.get_distributor_score()] += 1
         self._token_owner[tokenId] = self.get_distributor_score()
         self._tokens[tokenId] = json_dumps(params)
         self.TokenMinted(self.msg.sender, tokenId, json_dumps(params))
+
+        else:
+            revert("Mint error: Only admin can mint new tokens ")
 
     @external
     def update_token(self, _params: str, _tokenId: str):
