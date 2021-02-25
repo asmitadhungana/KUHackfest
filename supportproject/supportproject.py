@@ -21,6 +21,10 @@ class SupportProject(IconScoreBase):
     _FUNDING_GOAL_REACHED = 'funding_goal_reached'
     _CROWDSALE_CLOSED = 'crowdsale_closed'
 
+    _PROJECT_NAME = "project_name"
+    _PROJECT_TYPE = "project_type"
+    _PROJECT_PURPOSE = "project_purpose"
+
     ONE_ICX = 10 ** 18
 
     @eventlog
@@ -52,6 +56,10 @@ class SupportProject(IconScoreBase):
         self._funding_goal_reached = VarDB(self._FUNDING_GOAL_REACHED, db, value_type=bool)
         self._crowdsale_closed = VarDB(self._CROWDSALE_CLOSED, db, value_type=bool)
 
+        self._project_name = VarDB(self._PROJECT_NAME, db, value_type = str)
+        self._project_type = VarDB(self._PROJECT_TYPE, db, value_type = str)
+        self._project_purpose = VarDB(self._PROJECT_PURPOSE, db, value_type = str)
+
     def on_install(self, _projectName: str, _projectType: str, _projectPurpose: str, _fundingGoalInIcx: int, _tokenScore: Address, _durationInBlocks: int) -> None:
         """
         Called when this SCORE first deployed.
@@ -74,6 +82,11 @@ class SupportProject(IconScoreBase):
         # The exchange ratio to ICX is 1:1
         icx_cost_of_each_token = 1
 
+        self._project_name.set(_projectName)
+        self._project_type.set(_projectType)
+        self._project_purpose.set(_projectPurpose)
+
+        self._addr_token_score.set(_tokenScore)
         self._addr_beneficiary.set(self.msg.sender)
         self._addr_token_score.set(_tokenScore)
         self._funding_goal.set(_fundingGoalInIcx * self.ONE_ICX)
