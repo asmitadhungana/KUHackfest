@@ -1,0 +1,94 @@
+body{
+    margin: 0px;
+    padding: 0px;
+}
+.header{
+    position: fixed;
+    height:60px;
+    width:100%;
+    background-color:yellowgreen;
+    color:white;
+    font-size: 18px;
+}
+.header ul {
+    margin-right: 16px;
+    list-style-type: none;
+  }
+  
+.header li {
+    float: right;
+  }
+  
+.header li a {
+    height: 40px;
+    display: block;
+    color: white;
+    text-align: center;
+    padding-left: 16px;
+    padding-right: 16px;
+    text-decoration: none;
+  }
+  
+.header li a:hover:not(.active) {
+    background-color: chartreuse;
+  }
+  
+  .active {
+    background-color: #4CAF50;
+  }
+  .plus {
+    position:relative;
+    border: 1px dotted yellowgreen;
+    width: 2px;
+    height: 2px;
+    background-color: white;
+    box-sizing: border-box;
+    transform: scale(8);
+  }
+  .BuyToken{
+      height: 600px;
+      width: 100%;
+      background-color: chartreuse;
+  }
+  .BuyToken button{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: cornsilk;
+    color: black;
+  font-size: 16px;
+  padding: 16px 30px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+  }
+
+  .BuyToken button:hover{
+    background-color: black;
+    color: white;
+  }
+  .Projects {
+    width: 100%;
+    text-align: center;
+    display: inline;
+  }
+  .project {
+      margin-top: 8px;
+      padding: 4px;
+      text-align: left;
+      height: 300px;
+      width: 300px;
+      border: 1px solid black;
+  }
+  .Projects ul{
+    list-style-type: none;
+  }
+  .Projects li{
+    display: inline-block;
+    padding-left: 8px;
+    padding-right: 8px;
+    text-decoration: none;
+  }

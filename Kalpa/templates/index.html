@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+<title>KALPA</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css')}}">
+
+{% endblock %}
+
+{% block body %}
+<div class="header">
+<ul>
+    <li style="float: left;"><a>JUNGLE</a></li>
+    <li><a><div class="plus"></div></a></li>
+    <li><a>ABOUT</a></li>
+    <li><a>HOME</a></li>
+</ul>
+</div>
+<div class="BuyToken">
+<button>Buy Tokens</button>
+</div>
+<div class="Projects">
+    <p>OPEN PROJECTS</p>
+    <button style="float: right;">NEW PROPOSAL</button>
+    <ul>
+      <li>  <div class=project>
+        <p>NAME:</p>
+        <p>BUDGET:</p>
+        <p>MOTIVE:</p>
+        <p>MILESTONE 1:</p>
+        <p>MILESTONE 2:</p>
+        <d></d>
+    </div></li>
+      <li><div class=project>
+        <p>NAME:</p>
+        <p>BUDGET:</p>
+        <p>MOTIVE:</p>
+        <p>MILESTONE 1:</p>
+        <p>MILESTONE 2:</p>
+        <d></d>
+    </div></li>  
+       <li><div class=project>
+        <p>NAME:</p>
+        <p>BUDGET:</p>
+        <p>MOTIVE:</p>
+        <p>MILESTONE 1:</p>
+        <p>MILESTONE 2:</p>
+        <d></d>
+    </div></li> 
+    </ul>
+    <br>
+    <p>CLAIM YOUR IKU TOKEN</p>
+<div class="select"><label for="projects">SELECT THE PROJECT YOU CONTRIBUTED TO:</label>
+    <select style="width: 200px;" name="projects" id="projects">
+    <option >   </option>
+      <option value="project1">Project 1</option>
+      <option value="project2">Project 2</option>
+      <option value="project3">Project 3</option>
+      <option value="project4">Project 4</option>
+    </select></div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+{% endblock %}
